@@ -1,0 +1,5 @@
+<%= @failures.each do |failure| %>
+  <%= failure.title %>
+  <%= link_to "削除", failure, method: :delete,
+                        data: { confirm: "本当に削除してよろしいですか？" } %>
+<% end %>
