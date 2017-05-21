@@ -11,7 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170521064133) do
+ActiveRecord::Schema.define(version: 20170521070822) do
+
+  create_table "failures", force: :cascade do |t|
+    t.string   "title",      limit: 255
+    t.text     "overview",   limit: 65535
+    t.text     "timeline",   limit: 65535
+    t.text     "cause",      limit: 65535
+    t.text     "damage",     limit: 65535
+    t.text     "action",     limit: 65535
+    t.text     "prevention", limit: 65535
+    t.text     "lesson",     limit: 65535
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  limit: 255, default: "", null: false
