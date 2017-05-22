@@ -1,2 +1,16 @@
-<h1>StaticPages#home</h1>
-<p>Find me in app/views/static_pages/home.html.erb</p>
+<%= render 'static_pages/header' %>
+
+<%= render 'static_pages/service' %>
+
+<section class="bg-primary" style="background: url(images/header.jpg);">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 text-center">
+                <h2 class="section-heading">記録フォーマットについて</h2>
+                <hr>
+                <p>Failure Logでは、失敗を7つの項目で記録します。<br><br>①概要<br>②時系列順の起きた事象<br>③根本原因<br>④影響と損害<br>⑤すぐに解決するための行動一式<br>⑥再発防止のための行動一式<br>⑦教訓<br><br>この項目は書籍『Team Geek』に記載されている、<br>Googleのエンジニアチームが障害を記録する際のフォーマットより作成しました</p><br><br>
+                <a href="failures/new" class="btn btn-default btn-xl">失敗を記録する</a>
+            </div>
+        </div>
+    </div>
+</section>
