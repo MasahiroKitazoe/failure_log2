@@ -1,4 +1,7 @@
 class FailuresController < ApplicationController
+
+  before_action :authenticate_user!, except: :index
+
   def index
     @failures = Failure.where(user_id: current_user.id)
   end

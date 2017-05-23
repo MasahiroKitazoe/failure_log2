@@ -1,37 +1,42 @@
+<h1 style="text-align: center;">失敗を記録する</h1><br>
+<hr>
+
 <div class="container" id="forms">
-  <%= form_for @failure do |f| %>
+  <%= bootstrap_form_for @failure do |f| %>
     <div class="form-group">
       <%= f.label :タイトル %><br>
-      <%= f.text_area :title %><br>
+      <%= f.text_field :title %><br>
     </div>
     <div class="form-group">
       <%= f.label :概要 %><br>
       <%= f.text_area :overview, :size => "100x5" %><br>
     </div>
     <div class="form-group">
-      <%= f.label :タイムライン %><br>
+      <%= f.label :起きた事象を客観的に捉え、時系列順に記入してください %><br>
       <%= f.text_area :timeline, :size => "100x5" %><br>
     </div>
     <div class="form-group">
-      <%= f.label :根本原因 %><br>
+      <%= f.label :根本原因は何だったのか、客観的に分析してください %><br>
       <%= f.text_area :cause, :size => "100x5" %><br>
     </div>
     <div class="form-group">
-      <%= f.label :影響と損害 %><br>
+      <%= f.label :失敗による影響と損害を客観的に評価してください %><br>
       <%= f.text_area :damage, :size => "100x5" %><br>
     </div>
     <div class="form-group">
-      <%= f.label :同じ失敗をしてしまった場合に被害を最小限にとどめるための行動一式 %><br>
+      <%= f.label :同じ失敗を犯した場合に、被害を最小限に止めるためにするべきこと %><br>
       <%= f.text_area :action, :size => "100x5" %><br>
     </div>
     <div class="form-group">
-      <%= f.label :再発防止のための行動一式 %><br>
+      <%= f.label :再発を防止するためにするべきこと %><br>
       <%= f.text_area :prevention, :size => "100x5" %><br>
     </div>
     <div class="form-group">
-      <%= f.label :教訓 %><br>
+      <%= f.label :失敗から得た教訓 %><br>
       <%= f.text_area :lesson, :size => "100x5" %><br>
     </div>
+    <div class="form-group" style="text-align: center;">
     <%= f.submit "記録する", :class => "btn btn-primary" %>
+    </div>
   <% end %>
 </div>
