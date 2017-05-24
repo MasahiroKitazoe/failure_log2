@@ -16,6 +16,7 @@ class FailuresController < ApplicationController
 
   def create
     Failure.create(create_params)
+    redirect_to failures_url
   end
 
   def destroy
