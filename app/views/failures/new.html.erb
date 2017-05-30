@@ -4,11 +4,11 @@
 <div class="container" id="forms">
   <%= bootstrap_form_for @failure do |f| %>
     <div class="form-group">
-      <%= f.label :タイトル %><br>
+      <%= f.label :タイトルをつけてください %><br>
       <%= f.text_field :title %><br>
     </div>
     <div class="form-group">
-      <%= f.label :概要 %><br>
+      <%= f.label :失敗の概要を記述してください %><br>
       <%= f.text_area :overview, :size => "100x5" %><br>
     </div>
     <div class="form-group">
@@ -20,7 +20,7 @@
       <%= f.text_area :cause, :size => "100x5" %><br>
     </div>
     <div class="form-group">
-      <%= f.label :失敗による影響と損害を客観的に評価してください %><br>
+      <%= f.label :失敗による影響と損害はどの程度のものでしたか？客観的に評価してみましょう %><br>
       <%= f.text_area :damage, :size => "100x5" %><br>
     </div>
     <div class="form-group">
