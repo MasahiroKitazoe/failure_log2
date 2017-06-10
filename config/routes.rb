@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   get 'static_pages/feed'
   devise_for :users
   resources :failures
+  resources :failure_steps
 
   root 'static_pages#home'
 end

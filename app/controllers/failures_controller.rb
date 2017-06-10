@@ -15,9 +15,17 @@ class FailuresController < ApplicationController
   end
 
   def create
-    Failure.create(create_params)
-    flash[:success] = "記録が完了しました"
-    redirect_to failures_url
+    @failure = Failure.new(create_params)
+    if @failure.save
+      session[:failure_id] = @failure.id
+      redirect_to failure_steps_path
+    else
+      render :new
+    end
+    #元のコード
+    # Failure.create(create_params)
+    # flash[:success] = "記録が完了しました"
+    # redirect_to failures_url
   end
 
   def destroy
