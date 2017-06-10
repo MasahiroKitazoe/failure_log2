@@ -16,6 +16,7 @@ class FailuresController < ApplicationController
 
   def create
     Failure.create(create_params)
+    flash[:success] = "記録が完了しました"
     redirect_to failures_url
   end
 
