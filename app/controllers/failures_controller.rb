@@ -25,14 +25,11 @@ class FailuresController < LayoutsController
     else
       render :new
     end
-    #元のコード
-    # Failure.create(create_params)
-    # flash[:success] = "記録が完了しました"
-    # redirect_to failures_url
   end
 
   def destroy
     Failure.find(params[:id]).destroy
+    redirect_to failures_path, notice: "削除が完了しました"
   end
 
   private
@@ -47,7 +44,8 @@ class FailuresController < LayoutsController
     :damage,
     :action,
     :prevention,
-    :lesson
+    :lesson,
+    :share
     ).merge(user_id: current_user.id)
 end
 end

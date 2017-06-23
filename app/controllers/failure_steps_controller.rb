@@ -31,7 +31,8 @@ class FailureStepsController < ApplicationController
       :damage,
       :action,
       :prevention,
-      :lesson
+      :lesson,
+      :share
       ).merge(user_id: current_user.id)
     end
 end

@@ -4,16 +4,16 @@
 <div class="container" id="forms">
   <%= bootstrap_form_for @failure, url: wizard_path do |f| %>
     <div class="field">
-      <%= f.label :同じ失敗を犯した時の応急処置策 %>
-      <%= f.text_area :action, :size => "100x5" %>
+      <%= f.text_area :action, :size => "100x5", label: "同じ失敗を犯した時の応急処置策" %>
     </div>
     <div class="field">
-      <%= f.label :再発を防止するためにするべきこと %>
-      <%= f.text_area :prevention, :size => "100x5" %>
+      <%= f.text_area :prevention, :size => "100x5", label: "再発を防止するためにするべきこと" %>
     </div>
     <div class="field">
-      <%= f.label :失敗から得た教訓 %>
-      <%= f.text_area :lesson, :size => "100x5" %>
+      <%= f.text_area :lesson, :size => "100x5", label: "失敗から得た教訓" %>
+    </div>
+    <div class="field">
+      <%= f.check_box :share, {:checked => true, label: "この失敗を公開する"},"1","2" %>
     </div>
     <div class="actions" style="text-align: center;">
         <%= f.submit "記録を完了する", :class => "btn btn-primary" %>

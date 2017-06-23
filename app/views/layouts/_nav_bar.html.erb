@@ -1,26 +1,33 @@
 <nav class="navbar navbar-default navbar-fixed-top">
   <div class="container-fluid">
     <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+      </button>
       <a class="navbar-brand" href="/" id="nav_title">Failure Log</a>
     </div>
     <% if user_signed_in? %>
-      <ul class="nav navbar-nav navbar-right">
-        <li>
-          <%= link_to "ログアウト", "/users/sign_out", method: :delete %>
-        </li>
-        <li>
-          <%= link_to "これまでの失敗の記録", failures_path %>
-        </li>
-      </ul>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <%= link_to "ログアウト", "/users/sign_out", method: :delete %>
+          </li>
+          <li>
+            <%= link_to "これまでの失敗の記録", failures_path %>
+          </li>
+        </ul>
+      </div>
     <% else %>
-      <ul class="nav navbar-nav navbar-right">
-        <li>
-          <a href="/users/sign_in">ログイン</a>
-        </li>
-        <li>
-          <a href="/users/sign_up">新規登録</a>
-        </li>
-      </ul>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <a href="/users/sign_in">ログイン</a>
+          </li>
+          <li>
+            <a href="/users/sign_up">新規登録</a>
+          </li>
+        </ul>
+      </div>
     <% end %>
   </div>
 </nav>

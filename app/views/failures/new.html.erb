@@ -5,11 +5,11 @@
   <%= bootstrap_form_for @failure do |f| %>
     <div class="field">
       <%= f.label :タイトルをつけてください %><br>
-      <%= f.text_field :title %><br>
+      <%= f.text_field :title, label: "タイトルをつけてください" %><br>
     </div>
     <div class="field">
       <%= f.label :失敗の概要を記述してください %><br>
-      <%= f.text_area :overview, :size => "100x5" %><br>
+      <%= f.text_area :overview, :size => "100x5", label: "失敗の概要を記述してください" %><br>
     </div>
     <div class="action" style="text-align: center;">
     <%= f.submit "次へ", :class => "btn btn-primary" %>
