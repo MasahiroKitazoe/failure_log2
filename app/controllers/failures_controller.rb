@@ -1,4 +1,4 @@
-class FailuresController < ApplicationController
+class FailuresController < LayoutsController
 
   before_action :authenticate_user!, except: :index
 
@@ -12,6 +12,9 @@ class FailuresController < ApplicationController
 
   def new
     @failure = Failure.new
+  end
+
+  def edit
   end
 
   def create

@@ -4,7 +4,7 @@
 <div class="container" id="forms">
   <%= bootstrap_form_for @failure, url: wizard_path do |f| %>
     <div class="field">
-      <%= f.label :同じ失敗を犯した場合に、被害を最小限に止めるためにするべきこと %>
+      <%= f.label :同じ失敗を犯した時の応急処置策 %>
       <%= f.text_area :action, :size => "100x5" %>
     </div>
     <div class="field">

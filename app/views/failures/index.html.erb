@@ -1,10 +1,14 @@
-<h1><%= current_user.nickname %>さんの失敗の記録</h1>
+<h1 class="failure-title"><%= current_user.nickname %>さんの失敗の記録</h1><br>
+
+<hr><br>
 
 <div class="container">
   <% @failures.each do |failure| %>
-    <h4><%= failure.title %></h4>
-    <p><%= link_to "詳細", failure %>
-    <%= link_to "削除", failure, method: :delete,
-                          data: { confirm: "本当に削除してよろしいですか？" } %></p>
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <h3><%= failure.title %></h3>
+        <p><%= link_to "詳細を見る", failure %>
+      </div>
+    </div>
   <% end %>
 </div>
