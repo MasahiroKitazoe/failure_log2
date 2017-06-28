@@ -18,7 +18,7 @@ class FailureStepsController < ApplicationController
   private
 
     def redirect_to_finish_wizard(options = nil)
-    redirect_to root_url, notice: "記録が完了しました"
+    redirect_to root_url, success: "記録が完了しました"
     end
 
     def failure_params

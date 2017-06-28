@@ -15,6 +15,13 @@ class FailuresController < LayoutsController
   end
 
   def edit
+    @failure = Failure.find(params[:id])
+  end
+
+  def update
+    @failure = Failure.find(params[:id])
+    @failure.update(create_params)
+    redirect_to failures_path, success: "編集が完了しました"
   end
 
   def create

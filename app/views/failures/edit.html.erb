@@ -1,0 +1,37 @@
+<h1 style="text-align: center;">記録を編集する</h1><br>
+<hr>
+
+<div class="container" id="forms">
+  <%= bootstrap_form_for @failure do |f| %>
+    <div class="field">
+      <%= f.text_field :title, label: "タイトルをつけてください" %><br>
+    </div>
+    <div class="field">
+      <%= f.text_area :overview, :size => "100x5", label: "失敗の概要を記述してください" %><br>
+    </div>
+    <div class="field">
+      <%= f.text_area :timeline, :size => "100x5", label: "起きた事象を客観的に捉え、時系列順に記入してください" %>
+    </div>
+    <div class="field">
+      <%= f.text_area :cause, :size => "100x5", label: "根本原因は何だったのか、客観的に分析してください" %>
+    </div>
+    <div class="field">
+      <%= f.text_area :damage, :size => "100x5", label: "失敗による影響と損害はどの程度のものでしたか？客観的に評価してみましょう" %>
+    </div>
+    <div class="field">
+      <%= f.text_area :action, :size => "100x5", label: "同じ失敗を犯した時の応急処置策" %>
+    </div>
+    <div class="field">
+      <%= f.text_area :prevention, :size => "100x5", label: "再発を防止するためにするべきこと" %>
+    </div>
+    <div class="field">
+      <%= f.text_area :lesson, :size => "100x5", label: "失敗から得た教訓" %>
+    </div>
+    <div class="field">
+      <%= f.check_box :share, {:checked => true, label: "この失敗を公開する"},"1","2" %>
+    </div>
+    <div class="action" style="text-align: center;">
+    <%= f.submit "編集を完了する", :class => "btn btn-primary" %>
+    </div>
+  <% end %>
+</div>
