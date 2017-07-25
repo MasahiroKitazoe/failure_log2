@@ -1,9 +1,9 @@
 class FailuresController < LayoutsController
 
-  before_action :authenticate_user!, except: :index
+  before_action :authenticate_user!, except: [:index, :show]
 
   def index
-    @failures = Failure.where(user_id: current_user.id)
+    @failures = Failure.where(:share => "1")
   end
 
   def show
@@ -36,7 +36,7 @@ class FailuresController < LayoutsController
 
   def destroy
     Failure.find(params[:id]).destroy
-    redirect_to failures_path, notice: "削除が完了しました"
+    redirect_to failures_path, success: "削除が完了しました"
   end
 
   private

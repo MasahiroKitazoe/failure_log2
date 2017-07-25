@@ -1,0 +1,8 @@
+<% if user_signed_in? %>
+  <% if @failure.user_id == current_user.id %>
+    <hr><br>
+    <p style="text-align: center;"><%= link_to "この記録を編集する", edit_failure_path %></p>
+
+    <p style="text-align: center;"><%= link_to "この記録を削除する", failure_path, method: :delete %></p>
+  <% end %>
+<% end %>

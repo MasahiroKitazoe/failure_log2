@@ -13,13 +13,19 @@
             <%= link_to "ログアウト", "/users/sign_out", method: :delete %>
           </li>
           <li>
-            <%= link_to "これまでの失敗の記録", failures_path %>
+            <%= link_to "自分の失敗の記録", user_path(current_user.id) %>
+          </li>
+          <li>
+            <%= link_to "みんなの失敗の記録", failures_path %>
           </li>
         </ul>
       </div>
     <% else %>
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav navbar-right">
+          <li>
+            <%= link_to "みんなの失敗の記録", failures_path %>
+          </li>
           <li>
             <a href="/users/sign_in">ログイン</a>
           </li>

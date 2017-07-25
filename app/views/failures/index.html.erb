@@ -1,13 +1,16 @@
-<h1 class="failure-title"><%= current_user.nickname %>さんの失敗の記録</h1><br>
+<h1 class="failure-title">みんなの失敗の記録</h1><br>
 
 <hr><br>
 
 <div class="container">
   <% @failures.each do |failure| %>
     <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= failure.user.nickname %>さん</h3>
+      </div>
       <div class="panel-body">
         <h3><%= failure.title %></h3>
-        <p><%= link_to "詳細を見る", failure %>
+        <p><%= link_to "詳細を見る", failure %></p>
       </div>
     </div>
   <% end %>

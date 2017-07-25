@@ -1,7 +1,7 @@
-class User < ActiveRecord::Base
-  has_many :failures, dependent: :destroy
+  class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+  has_many :failures, dependent: :destroy
 
   # 与えられた文字列のハッシュ値を返す
   def User.digest(string)

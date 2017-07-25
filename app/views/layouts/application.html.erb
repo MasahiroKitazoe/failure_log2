@@ -9,9 +9,7 @@
 </head>
 <body>
 
-<% flash.each do |message_type, message| %>
-  <div class="alert alert-<%= message_type %>"><%= message %></div>
-<% end %>
+<%= bootstrap_flash %>
 
 <%= yield %>
 

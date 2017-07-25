@@ -1,0 +1,14 @@
+<h1 class="failure-title"><%= @user.nickname %>さんの失敗の記録</h1><br>
+
+<hr><br>
+
+<div class="container">
+  <% @failures.each do |failure| %>
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <h3><%= failure.title %></h3>
+        <p><%= link_to "詳細を見る", failure %>
+      </div>
+    </div>
+  <% end %>
+</div>
